@@ -161,9 +161,9 @@ uiElements[1] = display.newImageRect(uiGroup, "UIelements/UI 1.png", 96, 32) -- 
 uiElements[1].x = display.safeScreenOriginX + uiElements[1].width/2
 uiElements[1].y = display.safeScreenOriginY + uiElements[1].height/2
 
-uiElements[2] = display.newImageRect(uiGroup, "UIelements/UI 2.png", 96, 32) -- top bottom safe region
+uiElements[2] = display.newImageRect(uiGroup, "UIelements/UI 2.png", 96, 32) -- bottom left safe region
 uiElements[2].x = display.safeScreenOriginX + uiElements[2].width/2
-uiElements[2].y = display.safeActualContentHeight
+uiElements[2].y = display.safeActualContentHeight - uiElements[1].height/2 + display.safeScreenOriginY
 
 uiElements[3] = display.newImageRect(uiGroup, "UIelements/UI 3.png", 96, 32) -- top right safe region
 uiElements[3].x = display.safeActualContentWidth + display.safeScreenOriginX - uiElements[3].width/2 -- Always know they display.safeScreenOriginX is a negative value, hence we are actually subtracting.
@@ -171,11 +171,11 @@ uiElements[3].y = display.safeScreenOriginY + uiElements[3].height/2
 
 uiElements[4] = display.newImageRect(uiGroup, "UIelements/UI 4.png", 96, 32) -- bottom right safe region
 uiElements[4].x = display.safeActualContentWidth + display.safeScreenOriginX - uiElements[3].width/2
-uiElements[4].y = display.safeActualContentHeight
+uiElements[4].y = display.safeActualContentHeight - uiElements[1].height/2 + display.safeScreenOriginY
 
 uiElements[5] = display.newImageRect(uiGroup, "UIelements/UI 5.png", 96, 32) -- bottom center safe region
 uiElements[5].x = display.contentCenterX
-uiElements[5].y = display.safeActualContentHeight
+uiElements[5].y = display.safeActualContentHeight - uiElements[1].height/2 + display.safeScreenOriginY
 
 -- Marking the safe regions. CLICK ON RED CIRCLE TO VIEW
 
